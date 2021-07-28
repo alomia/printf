@@ -11,7 +11,6 @@ case 'c': {
 
 buff[j] = (char)va_arg(args, int);
 j++;
-return (j);
 break;
 }
 
@@ -20,7 +19,6 @@ case 'd': {
 _itoa(va_arg(args, int), tmp, 10);
 strcpy(&buff[j], tmp);
 j += strlen(tmp);
-return (j);
 break;
 }
 
@@ -29,7 +27,6 @@ case 'x': {
 _itoa(va_arg(args, int), tmp, 16);
 strcpy(&buff[j], tmp);
 j += strlen(tmp);
-return (j);
 break;
 }
 
@@ -37,7 +34,6 @@ case 'o': {
 _itoa(va_arg(args, int), tmp, 8);
 strcpy(&buff[j], tmp);
 j += strlen(tmp);
-return (j);
 break;
 }
 
@@ -45,9 +41,8 @@ case 's': {
 str_arg = va_arg(args, char*);
 strcpy(&buff[j], str_arg);
 j += strlen(str_arg);
-return (j);
 break;
 }
 }
-return (0);
+return (j);
 }
