@@ -15,4 +15,6 @@ char * _itoa(int i, char *strout, int base);
 /*sends formatted output to stdout*/
 int _printf(const char *format, ...);
 
+int caseFormat(const char *format, int i, int j, char buff[], char tmp[], va_list args);
+
 #endif
