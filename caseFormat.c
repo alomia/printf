@@ -14,6 +14,14 @@ j++;
 break;
 }
 
+case 'i': {
+
+_itoa(va_arg(args, int), tmp, 10);
+strcpy(&buff[j], tmp);
+j += strlen(tmp);
+break;
+}
+
 case 'd': {
 
 _itoa(va_arg(args, int), tmp, 10);
