@@ -15,7 +15,6 @@ int j = 0;
 
 char buff[100] = {0};
 char tmp[20];
-char *str_arg;
 
 va_start(args, format);
 
@@ -25,8 +24,13 @@ while (format && format[i])
 if (format[i] == '%')
 {
 i++;
+<<<<<<< HEAD
 case_format(format, buff, tmp, str_arg, i, j);
 }
+=======
+j = caseFormat(format, i, j, buff, tmp, args);
+
+>>>>>>> b70eaff13a79c0125206bd0a039dc1f88530d63f
 }
 
 else
