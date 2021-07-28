@@ -7,14 +7,15 @@
 #include <string.h>
 
 /*invert the given chain*/
-char *_strrev (char *str);
+char *_strrev(char *str);
 
 /*converts int data type to string data type*/
-char * _itoa(int i, char *strout, int base);
+char *_itoa(int i, char *strout, int base);
 
 /*sends formatted output to stdout*/
 int _printf(const char *format, ...);
 
-int caseFormat(const char *format, int i, int j, char buff[], char tmp[], va_list args);
+/* function to distinguish the format of a variable*/
+int caseFormat(const char *, int, int, char *, char *, va_list);
 
 #endif
