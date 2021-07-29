@@ -10,8 +10,8 @@ int _printf(const char *format, ...)
 
 va_list args;
 
-int i = 0;
-int j = 0;
+unsigned int i = 0;
+unsigned int j = 0;
 
 char buff[100] = {0};
 char tmp[20];
