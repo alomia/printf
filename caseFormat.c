@@ -1,4 +1,5 @@
 #include "holberton.h"
+#include <string.h>
 
 int caseFormat(const char *format, int i, int j, char buff[], char tmp[], va_list args)
 {
@@ -51,6 +52,13 @@ strcpy(&buff[j], str_arg);
 j += strlen(str_arg);
 break;
 }
+
+case '%': {
+
+j = buff[j] = format[i];
+break;
+}
+
 }
 return (j);
 }
