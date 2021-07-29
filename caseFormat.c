@@ -1,4 +1,5 @@
 #include "holberton.h"
+#include <string.h>
 
 int caseFormat(const char *format, int i, int j, char buff[], char tmp[], va_list args)
 {
@@ -11,7 +12,14 @@ case 'c': {
 
 buff[j] = (char)va_arg(args, int);
 j++;
-return (j);
+break;
+}
+
+case 'i': {
+
+_itoa(va_arg(args, int), tmp, 10);
+strcpy(&buff[j], tmp);
+j += strlen(tmp);
 break;
 }
 
@@ -20,7 +28,6 @@ case 'd': {
 _itoa(va_arg(args, int), tmp, 10);
 strcpy(&buff[j], tmp);
 j += strlen(tmp);
-return (j);
 break;
 }
 
@@ -29,7 +36,6 @@ case 'x': {
 _itoa(va_arg(args, int), tmp, 16);
 strcpy(&buff[j], tmp);
 j += strlen(tmp);
-return (j);
 break;
 }
 
@@ -37,7 +43,6 @@ case 'o': {
 _itoa(va_arg(args, int), tmp, 8);
 strcpy(&buff[j], tmp);
 j += strlen(tmp);
-return (j);
 break;
 }
 
@@ -45,9 +50,15 @@ case 's': {
 str_arg = va_arg(args, char*);
 strcpy(&buff[j], str_arg);
 j += strlen(str_arg);
-return (j);
 break;
 }
+
+case '%': {
+
+j = buff[j] = format[i];
+break;
 }
-return (0);
+
+}
+return (j);
 }
