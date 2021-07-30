@@ -5,6 +5,7 @@
 #include <stdlib.h>
 #include <stdarg.h>
 #include <string.h>
+#include <unistd.h>
 
 /*invert the given chain*/
 char *_strrev(char *str);
@@ -16,7 +17,6 @@ char *_itoa(int i, char *strout, int base);
 int _printf(const char *format, ...);
 
 /* function to distinguish the format of a variable*/
-int caseFormat(const char *, unsigned int, unsigned int, char *, char *, va_list);
+int caseFormat(const char *,unsigned int, unsigned int, char *, va_list);
 
 #endif
-
