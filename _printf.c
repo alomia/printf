@@ -8,15 +8,14 @@
 int _printf(const char *format, ...)
 {
 
-va_list args;
+va_list arg;
 
-int i = 0;
-int j = 0;
+unsigned int i = 0;
+unsigned int j = 0;
 
 char buff[100] = {0};
-char tmp[20];
 
-va_start(args, format);
+va_start(arg, format);
 
 while (format && format[i])
 {
@@ -25,8 +24,7 @@ if (format[i] == '%')
 {
 
 i++;
-j = caseFormat(format, i, j, buff, tmp, args);
-
+j = caseFormat(format, i, j, buff, arg);
 }
 
 else
@@ -40,6 +38,6 @@ i++;
 }
 
 fwrite(buff, j, 1, stdout);
-va_end(args);
+va_end(arg);
 return (j);
 }
