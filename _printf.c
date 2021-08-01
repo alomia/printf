@@ -15,6 +15,10 @@ unsigned int j = 0;
 
 char buff[100] = {0};
 
+if (format == NULL)
+{
+return (-1);
+}
 va_start(arg, format);
 
 while (format && format[i])
